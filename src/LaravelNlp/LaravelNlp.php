@@ -1,10 +1,6 @@
 <?php
 
-
 namespace Web64\LaravelNlp;
-
-use PHPUnit\Framework\Constraint\Exception;
-
 
 class LaravelNlp extends \Web64\Nlp\NlpClient
 {
@@ -12,7 +8,7 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
 
     public function __construct($config)
     {
-        //dd( $config );
+
         if ( !empty($config['opencalais_key']) )
             $this->opencalais_key = $config['opencalais_key'];
 
