@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fe66de8f1c4b9b9185228d9a6baa89b",
+    "content-hash": "61ac87e9d2cf3a49761a97c5c2f6ec66",
     "packages": [
         {
             "name": "lsmonki/php-open-calais",
@@ -92,7 +92,7 @@
         },
         {
             "name": "web64/php-nlp-client",
-            "version": "0.10",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/web64/php-nlp-client.git",
@@ -138,6 +138,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "web64/php-nlp-client": 20,
         "lsmonki/php-open-calais": 20
     },
     "prefer-stable": false,
