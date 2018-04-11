@@ -1,0 +1,147 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1fe66de8f1c4b9b9185228d9a6baa89b",
+    "packages": [
+        {
+            "name": "lsmonki/php-open-calais",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lsmonki/PHP-OpenCalais.git",
+                "reference": "91591f7486d12541ed0e4429efa00107d02ba3aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lsmonki/PHP-OpenCalais/zipball/91591f7486d12541ed0e4429efa00107d02ba3aa",
+                "reference": "91591f7486d12541ed0e4429efa00107d02ba3aa",
+                "shasum": ""
+            },
+            "require": {
+                "neitanod/forceutf8": "2.x",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenCalais\\": "src/OpenCalais"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Grossman",
+                    "homepage": "http://www.dangrossman.info/"
+                },
+                {
+                    "name": "lsmonki",
+                    "homepage": "https://github.com/lsmonki/"
+                }
+            ],
+            "description": "A PHP class for extracting entities and social tags from documents with the OpenCalais API http://www.opencalais.com/",
+            "homepage": "http://www.dangrossman.info/",
+            "keywords": [
+                "metadata",
+                "open calais",
+                "opencalais",
+                "semantic",
+                "semantic analysis",
+                "semantic data"
+            ],
+            "time": "2015-12-28T15:04:55+00:00"
+        },
+        {
+            "name": "neitanod/forceutf8",
+            "version": "v2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neitanod/forceutf8.git",
+                "reference": "47c883ab2739e7938a8bb0bfd1c29d48c88858de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neitanod/forceutf8/zipball/47c883ab2739e7938a8bb0bfd1c29d48c88858de",
+                "reference": "47c883ab2739e7938a8bb0bfd1c29d48c88858de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ForceUTF8\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Sebastián Grignoli",
+                    "email": "grignoli@gmail.com"
+                }
+            ],
+            "description": "PHP Class Encoding featuring popular Encoding::toUTF8() function --formerly known as forceUTF8()-- that fixes mixed encoded strings.",
+            "homepage": "https://github.com/neitanod/forceutf8",
+            "time": "2017-05-22T18:50:57+00:00"
+        },
+        {
+            "name": "web64/php-nlp-client",
+            "version": "0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/web64/php-nlp-client.git",
+                "reference": "687a0d17b3953a05c6f94a98d0e15ee1778bf509"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/web64/php-nlp-client/zipball/687a0d17b3953a05c6f94a98d0e15ee1778bf509",
+                "reference": "687a0d17b3953a05c6f94a98d0e15ee1778bf509",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Web64\\Nlp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Olav Hjertaker",
+                    "email": "olav.hjertaker@gmail.com"
+                }
+            ],
+            "description": "Library for accessing NLP apis",
+            "keywords": [
+                "article extraction",
+                "entity extraction",
+                "language detection",
+                "natural language",
+                "nlp"
+            ],
+            "time": "2018-04-10T17:21:15+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "lsmonki/php-open-calais": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,32 @@
+{
+    "name": "web64/laravel-nlp",
+    "description": "Laravel package for accessing NLP tools",
+    "type": "library",
+    "require": {
+        "web64/php-nlp-client": "dev-master",
+        "lsmonki/php-open-calais": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olav Hjertaker",
+            "email": "olav.hjertaker@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Web64\\LaravelNlp\\": "src/"
+        }
+    },
+    "extra":{
+        "laravel":{
+            "providers": [
+                "Web64\\LaravelNlp\\NlpServiceProvider"
+            ],
+            "aliases": {
+                "NLP": "Web64\\LaravelNlp\\Facades\\Nlp"
+            }
+        }
+    }
+}
