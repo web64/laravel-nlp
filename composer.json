@@ -3,8 +3,8 @@
     "description": "Laravel package for accessing NLP tools",
     "type": "library",
     "require": {
-        "web64/php-nlp-client": "dev-master",
-        "lsmonki/php-open-calais": "dev-master"
+        "web64/php-nlp-client": "^0.20",
+        "lsmonki/php-open-calais": "^2.1"
     },
     "license": "MIT",
     "authors": [
