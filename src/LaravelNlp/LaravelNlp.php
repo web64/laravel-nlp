@@ -8,15 +8,26 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
 
     public function __construct($config)
     {
-
         if ( !empty($config['opencalais_key']) )
             $this->opencalais_key = $config['opencalais_key'];
 
         parent::__construct($config['hosts'], $config['debug']);
-
     }
 
-    public function entities( $text, $language )
+    public function concepts( $word )
+    {
+        return (new \Web64\Nlp\MsConceptGraph)->get( $word );
+    }
+
+    public function sentiment( $text, $language = 'en' )
+    {
+        $response = $this->polyglot($text, $language);
+
+        if ( $response )
+            return $response->getSentiment();
+        
+    }
+    public function entities( $text, $language = 'en' )
     {
         $response = $this->polyglot($text, $language);
 

@@ -1,14 +1,14 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61ac87e9d2cf3a49761a97c5c2f6ec66",
+    "content-hash": "e201336bc38f5b34aa4dcd24e7945a3e",
     "packages": [
         {
             "name": "lsmonki/php-open-calais",
-            "version": "dev-master",
+            "version": "2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lsmonki/PHP-OpenCalais.git",
@@ -92,16 +92,16 @@
         },
         {
             "name": "web64/php-nlp-client",
-            "version": "dev-master",
+            "version": "v0.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/web64/php-nlp-client.git",
-                "reference": "687a0d17b3953a05c6f94a98d0e15ee1778bf509"
+                "reference": "ca2e048704a53ca8d4b85800ec68cfc05c5103f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/web64/php-nlp-client/zipball/687a0d17b3953a05c6f94a98d0e15ee1778bf509",
-                "reference": "687a0d17b3953a05c6f94a98d0e15ee1778bf509",
+                "url": "https://api.github.com/repos/web64/php-nlp-client/zipball/ca2e048704a53ca8d4b85800ec68cfc05c5103f3",
+                "reference": "ca2e048704a53ca8d4b85800ec68cfc05c5103f3",
                 "shasum": ""
             },
             "require": {
@@ -131,16 +131,13 @@
                 "natural language",
                 "nlp"
             ],
-            "time": "2018-04-10T17:21:15+00:00"
+            "time": "2018-04-23T09:45:03+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "web64/php-nlp-client": 20,
-        "lsmonki/php-open-calais": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
