@@ -19,6 +19,11 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
         return (new \Web64\Nlp\MsConceptGraph)->get( $word );
     }
 
+    public function article( $url )
+    {
+        return $this->newspaperUrl( $url );
+    }
+
     public function sentiment( $text, $language = 'en' )
     {
         $response = $this->polyglot($text, $language);
