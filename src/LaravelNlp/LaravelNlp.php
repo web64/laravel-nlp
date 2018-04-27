@@ -2,6 +2,8 @@
 
 namespace Web64\LaravelNlp;
 
+
+
 class LaravelNlp extends \Web64\Nlp\NlpClient
 {
     private $opencalais_key;
@@ -22,6 +24,19 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
     public function article( $url )
     {
         return $this->newspaperUrl( $url );
+    }
+
+    public function translate($text, $source_lang = null, $target_lang = null)
+    {
+        $translator = new  \Stichoza\GoogleTranslate\TranslateClient;
+
+        if ( $source_lang )
+            $translator->setSource($source_lang); 
+        
+        if ( $target_lang )
+            $translator->setTarget($target_lang); 
+
+        return $translator->translate( $text );
     }
 
     public function sentiment( $text, $language = 'en' )

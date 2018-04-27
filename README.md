@@ -3,6 +3,10 @@ A simple wrapper for PHP-NLP-Client and OpenCalais NLP tools.
 
 ## Installation
 
+```
+$ composer require web64/laravel-nlp
+```
+
 ## Requirements
 
 ## Included Tools
@@ -18,6 +22,7 @@ A simple wrapper for PHP-NLP-Client and OpenCalais NLP tools.
 ### Language Detection
 ```php
 use Web64\LaravelNlp\Facades\NLP;
+
 $lang = NLP::language("What language is this?");
 // 'en'
 ```
@@ -25,6 +30,7 @@ $lang = NLP::language("What language is this?");
 ### Article Extraction
 ```php
 use Web64\LaravelNlp\Facades\NLP;
+
 $article = NLP::article("https://medium.com/@taylorotwell/wildcard-letsencrypt-certificates-on-forge-d3bdec43692a");
 print_r($article);
 /*
@@ -54,6 +60,7 @@ print_r($article);
 For other Laravel NLP packages, check out:
  - https://github.com/AntoineAugusti/laravel-sentiment-analysis
  - https://github.com/michaeljhopkins/Laravel-Aylien-Wrapper
+ - https://github.com/findbrok/laravel-personality-insights
 
 
  ## Contribute

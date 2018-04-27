@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "web64/php-nlp-client": "^0.30",
-        "lsmonki/php-open-calais": "^2.1"
+        "lsmonki/php-open-calais": "^2.1",
+        "stichoza/google-translate-php": "~3.2"
     },
     "license": "MIT",
     "authors": [
