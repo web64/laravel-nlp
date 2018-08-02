@@ -39,17 +39,18 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
         return $translator->translate( $text );
     }
 
-    public function sentiment( $text, $language = 'en' )
-    {
-        $response = $this->polyglot($text, $language);
+    // public function sentiment( $text, $language = 'en' )
+    // {
+    //     $response = $this->sentiment($text, $language);
 
-        if ( $response )
-            return $response->getSentiment();
+    //     if ( $response )
+    //         return $response->getSentiment();
         
-    }
+    // }
+
     public function entities( $text, $language = 'en' )
     {
-        $response = $this->polyglot($text, $language);
+        $response = $this->polyglot_entities($text, $language);
 
         if ( $response )
             return $response->getEntities();
