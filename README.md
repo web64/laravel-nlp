@@ -8,7 +8,7 @@ $ composer require web64/laravel-nlp
 $ php artisan vendor:publish
 ```
 
-Plese follow the instructions here to install the NLP Server and CoreNLP server 
+Plese follow the instructions here to install the NLP Server and CoreNLP server:
  * https://github.com/web64/nlpserver
  * https://github.com/web64/php-nlp-client
 
@@ -38,7 +38,6 @@ $lang = NLP::language("What language is this?");
 // Entity Extraction
 $entities = NLP::entities( $text, 'en' );
 
-
 // Sentiment analysis
 $sentiment = NLP::sentiment( $text, 'en' );
 
@@ -46,13 +45,8 @@ $sentiment = NLP::sentiment( $text, 'en' );
 $translated_text = NLP::translate($text, null, 'pt');
 ```
 
-## Related projects
-This package is based on:
- * https://github.com/web64/nlpserver 
- * https://github.com/web64/php-nlp-client 
-
 ## NLP Server
-This package requires a running instance of the NLP Server (https://github.com/web64/nlpserver).
+This package requires a running instance of the NLP Server (https://github.com/web64/nlpserver) for most of the functionality to work.
 See the documentation for installation instructions of the NLP Server.
 
 ## Included Tools
@@ -96,11 +90,11 @@ dump($article);
 */
 ```
 
-### Entity Extraction
-This function uses the Polyglot library which supports entity extraction for 40 languages.
+### Entity Extraction with Polyglot
+This function uses the [Polyglot](https://polyglot.readthedocs.io/en/latest/Installation.html) library which supports entity extraction for 40 languages.
 Make sure you have downloaded the language models for the languages you are using.
 
-For English and other major European languages use Spacy or CoreNLP for best results.
+For English and other major European languages use [Spacy](https://spacy.io/usage/) or [CoreNLP](https://stanfordnlp.github.io/CoreNLP/download.html) for best results.
 ```php
 $text = "Barack Hussein Obama is an American politician who served as the 44th President of the United States from January 20, 2009 to January 20, 2017. Before that, he served in the Illinois State Senate from 1997 until 2004.";
 
