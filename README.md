@@ -15,7 +15,7 @@ Plese follow the instructions here to install the NLP Server and CoreNLP server:
  If you want to use Opencalais, get a token by registering [here](http://www.opencalais.com/) and read their [terms of service](http://www.opencalais.com/open-calais-terms-of-service/)
 
 ## Configuration
-Add 'NLPSERVER_URL' to your .env file to specify the location of where the NLP Server is running.
+Add `NLPSERVER_URL` to your `.env` file to specify the location of where the NLP Server is running.
 If you want to use [CoreNLP](https://stanfordnlp.github.io/CoreNLP/download.html) or [Opencalais](http://www.opencalais.com/) also fill inn those details in .env.
 
 Alternatively, update the nlp.php configuration file.
@@ -49,15 +49,15 @@ $translated_text = NLP::translate($text, null, 'pt');
 This package requires a running instance of the NLP Server (https://github.com/web64/nlpserver) for most of the functionality to work.
 See the documentation for installation instructions of the NLP Server.
 
-## Included Tools
+## Included NLP Tools
 * [Language Detection](#language-detection)
 * [Article Extraction](#article-extraction)
-* [Entity Extraction (Named Entity Recognition)](#entity-extraction)
+* [Entity Extraction (Named Entity Recognition)](#entity-extraction-with-polyglot)
 * [Sentiment Analysis](#sentiment-analysis)
-* Summarization
-* Translation
-* Neighbouring Words
-* CoreNLP Entities
+* [Summarization](#summarization)
+* [Translation](#translation)
+* [Neighbouring Words](#neighbouring-words)
+* [Concepts](#concepts)
 
 ## Usage
 Include the class to use the NLP facade.
@@ -111,7 +111,9 @@ Array
 ```
 
 ## Entity Extraction with Spacy
-A running NLP Server provides access to Spacy's entity extraction
+A running NLP Server provides access to Spacy's entity extraction.
+
+Spacy has language models for English, German, Spanish, Portuguese, French, Italian and Dutch.
 ```php
 $entities = NLP::spacy_entities($text, 'en' );
 /*
