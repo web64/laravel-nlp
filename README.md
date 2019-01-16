@@ -8,6 +8,12 @@ $ composer require web64/laravel-nlp
 $ php artisan vendor:publish
 ```
 
+Plese follow the instructions here to install the NLP Server and CoreNLP server 
+ * https://github.com/web64/nlpserver
+ * https://github.com/web64/php-nlp-client
+
+ If you want to use Opencalais, get a token by registering [here](http://www.opencalais.com/) and read their [terms of service](http://www.opencalais.com/open-calais-terms-of-service/)
+
 ## Configuration
 Add 'NLPSERVER_URL' to your .env file to specify the location of where the NLP Server is running.
 If you want to use [CoreNLP](https://stanfordnlp.github.io/CoreNLP/download.html) or [Opencalais](http://www.opencalais.com/) also fill inn those details in .env.
@@ -18,7 +24,6 @@ NLPSERVER_URL="http://localhost:6400/"
 CORENLP_HOST="http://localhost:9000/"
 OPENCALAIS_KEY=
 ```
-
 
 ## Quick Start
 ```php
@@ -32,6 +37,10 @@ $lang = NLP::language("What language is this?");
 
 // Entity Extraction
 $entities = NLP::entities( $text, 'en' );
+
+
+// Sentiment analysis
+$sentiment = NLP::sentiment( $text, 'en' );
 
 // Translage text to Portuguese
 $translated_text = NLP::translate($text, null, 'pt');
