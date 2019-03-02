@@ -3,9 +3,11 @@ A simple wrapper for the [PHP-NLP-Client](https://github.com/web64/php-nlp-clien
 
 
 ## Installation
-```
+```bash
 $ composer require web64/laravel-nlp
-$ php artisan vendor:publish
+
+# Install nlp.php config file
+$ php artisan vendor:publish --provider="Web64\LaravelNlp\NlpServiceProvider"
 ```
 
 Plese follow the instructions here to install the NLP Server and CoreNLP server:
