@@ -1,7 +1,7 @@
 # Laravel NLP
 
 <p align="center">
-  <img src="http://cdn.web64.com/nlp-norway/laravel-nlp-4.png" width="400">
+  <img src="http://cdn.web64.com/nlp-norway/laravel-nlp-6.png" width="400">
 </p>
 
 A simple wrapper for the [PHP-NLP-Client](https://github.com/web64/php-nlp-client) library for accessing Python and Java NLP libraries and external NLP APIs.
