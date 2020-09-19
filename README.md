@@ -6,33 +6,39 @@
 
 A simple wrapper for the [PHP-NLP-Client](https://github.com/web64/php-nlp-client) library for accessing Python and Java NLP libraries and external NLP APIs.
 
-
 ## Installation
+
 ```bash
 $ composer require web64/laravel-nlp
-
-# Install nlp.php config file
-$ php artisan vendor:publish --provider="Web64\LaravelNlp\NlpServiceProvider"
 ```
 
 Plese follow the instructions here to install the NLP Server and CoreNLP server:
- * https://github.com/web64/nlpserver
- * https://github.com/web64/php-nlp-client
 
- If you want to use Opencalais, get a token by registering [here](http://www.opencalais.com/) and read their [terms of service](http://www.opencalais.com/open-calais-terms-of-service/)
+- https://github.com/web64/nlpserver
+- https://github.com/web64/php-nlp-client
+
+If you want to use Opencalais, get a token by registering [here](http://www.opencalais.com/) and read their [terms of service](http://www.opencalais.com/open-calais-terms-of-service/)
 
 ## Configuration
+
 Add `NLPSERVER_URL` to your `.env` file to specify the location of where the NLP Server is running.
 If you want to use [CoreNLP](https://stanfordnlp.github.io/CoreNLP/download.html) or [Opencalais](http://www.opencalais.com/) also fill inn those details in .env.
 
-Alternatively, update the nlp.php configuration file.
 ```
 NLPSERVER_URL="http://localhost:6400/"
 CORENLP_HOST="http://localhost:9000/"
 OPENCALAIS_KEY=
 ```
 
+Alternatively, update the nlp.php configuration file.
+
+```bash
+# Publish nlp.php config file
+$ php artisan vendor:publish --provider="Web64\LaravelNlp\NlpServiceProvider"
+```
+
 ## Quick Start
+
 ```php
 use Web64\LaravelNlp\Facades\NLP;
 
@@ -53,32 +59,38 @@ $translated_text = NLP::translate($text, null, 'pt');
 ```
 
 ## NLP Server
+
 This package requires a running instance of the NLP Server (https://github.com/web64/nlpserver) for most of the functionality to work.
 See the documentation for installation instructions of the NLP Server.
 
 ## Included NLP Tools
-* [Language Detection](#language-detection)
-* [Article Extraction](#article-extraction)
-* [Entity Extraction (Named Entity Recognition)](#entity-extraction-with-polyglot)
-* [Sentiment Analysis](#sentiment-analysis)
-* [Summarization](#summarization)
-* [Translation](#translation)
-* [Neighbouring Words](#neighbouring-words)
-* [Concepts](#concepts)
+
+- [Language Detection](#language-detection)
+- [Article Extraction](#article-extraction)
+- [Entity Extraction (Named Entity Recognition)](#entity-extraction-with-polyglot)
+- [Sentiment Analysis](#sentiment-analysis)
+- [Summarization](#summarization)
+- [Translation](#translation)
+- [Neighbouring Words](#neighbouring-words)
+- [Concepts](#concepts)
 
 ## Usage
+
 Include the class to use the NLP facade.
+
 ```php
 use Web64\LaravelNlp\Facades\NLP;
 ```
 
 ### Language Detection
+
 ```php
 $lang = NLP::language("What language is this?");
 // 'en'
 ```
 
 ### Article Extraction
+
 ```php
 $article = NLP::article("https://medium.com/@taylorotwell/wildcard-letsencrypt-certificates-on-forge-d3bdec43692a");
 dump($article);
@@ -98,10 +110,12 @@ dump($article);
 ```
 
 ### Entity Extraction with Polyglot
+
 This function uses the [Polyglot](https://polyglot.readthedocs.io/en/latest/Installation.html) library which supports entity extraction for 40 languages.
 Make sure you have downloaded the language models for the languages you are using.
 
 For English and other major European languages use [Spacy](https://spacy.io/usage/) or [CoreNLP](https://stanfordnlp.github.io/CoreNLP/download.html) for best results.
+
 ```php
 $text = "Barack Hussein Obama is an American politician who served as the 44th President of the United States from January 20, 2009 to January 20, 2017. Before that, he served in the Illinois State Senate from 1997 until 2004.";
 
@@ -118,9 +132,11 @@ Array
 ```
 
 ## Entity Extraction with Spacy
+
 A running NLP Server provides access to Spacy's entity extraction.
 
 Spacy has language models for English, German, Spanish, Portuguese, French, Italian and Dutch.
+
 ```php
 $entities = NLP::spacy_entities($text, 'en' );
 /*
@@ -145,6 +161,7 @@ array:4 [
 ```
 
 ### Entitiy extraction with CoreNLP
+
 [CoreNLP](https://github.com/web64/php-nlp-client#corenlp---entity-extraction-ner) provides very good entoty extraction for English texts.
 
 To use this function you need a running instance of the CoreNLP server. [See installation inststructions](https://github.com/web64/php-nlp-client#corenlp---entity-extraction-ner)
@@ -179,8 +196,8 @@ array:6 [
 ```
 
 ### Sentiment Analysis
-This will return a value ranging from -1 to +1, where > 0 is considered to have a positive sentiment and everython < 0 has a negative sentiment.
 
+This will return a value ranging from -1 to +1, where > 0 is considered to have a positive sentiment and everython < 0 has a negative sentiment.
 
 Provide the language code as the second parameter to specify the language of the text. (default='en').
 
@@ -191,15 +208,20 @@ $sentiment = NLP::sentiment( "This is great!" );
 $sentiment = NLP::sentiment( "I hate this product", 'en' );
 // -1
 ```
+
 ### Summarization
+
 This will take a long text and return a summary of what is considered to be the most important sentences.
 An optional max. number of words can be speficied.
+
 ```php
 $summary = NLP::summarize($long_text);
 $summary = NLP::summarize($long_text, $max_word_count) ;
 
 ```
+
 ### Translation
+
 Second parameter is the source language. Language will be automatically detected if left as NULL
 
 ```php
@@ -210,7 +232,9 @@ $translated_text = NLP::translate("Mange er opprørt etter avsløringene om at p
 ```
 
 ### Neighbouring Words
+
 This uses word embeddings to find related words from the one given.
+
 ```php
 $words = NLP::neighbours( 'president');
 dump( $words );
@@ -220,8 +244,8 @@ array:10 [
   1 => "vice-president"
   2 => "President"
   3 => "Chairman"
-  4 => "Vice-President"     
-]                                 
+  4 => "Vice-President"
+]
 */
 
 // ensure polyglot language model is installed: polyglot download LANG:no
@@ -238,9 +262,11 @@ array:10 [
 ```
 
 ### Concepts
+
 This uses Microsoft Concept Graph For Short Text Understanding: https://concept.research.microsoft.com/
 
 An array of related concepts will be returned.
+
 ```php
 $concepts = NLP::concepts( 'php' );
 
@@ -254,19 +280,18 @@ array:10 [
   "server side language" => 0.044201768070723
   "web technology" => 0.031201248049922
   "server-side language" => 0.027561102444098
-] 
+]
 */
 ```
-
-
 
 ## More
 
 For other Laravel NLP packages, check out:
- - https://github.com/AntoineAugusti/laravel-sentiment-analysis
- - https://github.com/michaeljhopkins/Laravel-Aylien-Wrapper
- - https://github.com/findbrok/laravel-personality-insights
 
+- https://github.com/AntoineAugusti/laravel-sentiment-analysis
+- https://github.com/michaeljhopkins/Laravel-Aylien-Wrapper
+- https://github.com/findbrok/laravel-personality-insights
 
 ## Contribute
+
 Get in touch if you have any feedback or ideas on how to improve this package or the documentation.

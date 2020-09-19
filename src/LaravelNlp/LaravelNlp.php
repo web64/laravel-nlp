@@ -31,7 +31,7 @@ class LaravelNlp extends \Web64\Nlp\NlpClient
 
     public function translate($text, $source_lang = null, $target_lang = null)
     {
-        $translator = new  \Stichoza\GoogleTranslate\TranslateClient;
+        $translator = new  \Stichoza\GoogleTranslate\GoogleTranslate;
 
         if ( $source_lang )
             $translator->setSource($source_lang); 
