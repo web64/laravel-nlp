@@ -1,33 +1,33 @@
 {
-    "name": "web64/laravel-nlp",
-    "description": "Laravel package for accessing NLP tools",
-    "type": "library",
-    "require": {
-        "web64/php-nlp-client": "^0.40",
-        "lsmonki/php-open-calais": "^2.1",
-        "stichoza/google-translate-php": "~3.2"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Olav Hjertaker",
-            "email": "olav.hjertaker@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "Web64\\LaravelNlp\\": "src/"
-        }
-    },
-    "extra":{
-        "laravel":{
-            "providers": [
-                "Web64\\LaravelNlp\\NlpServiceProvider"
-            ],
-            "aliases": {
-                "NLP": "Web64\\LaravelNlp\\Facades\\Nlp"
-            }
-        }
+  "name": "web64/laravel-nlp",
+  "description": "Laravel package for accessing NLP tools",
+  "type": "library",
+  "require": {
+    "web64/php-nlp-client": "^0.40",
+    "lsmonki/php-open-calais": "^2.1",
+    "stichoza/google-translate-php": "~4.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Olav Hjertaker",
+      "email": "olav.hjertaker@gmail.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Web64\\LaravelNlp\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Web64\\LaravelNlp\\NlpServiceProvider"
+      ],
+      "aliases": {
+        "NLP": "Web64\\LaravelNlp\\Facades\\Nlp"
+      }
+    }
+  }
 }
