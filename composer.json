@@ -17,7 +17,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Web64\\LaravelNlp\\": "src/"
+      "Web64\\LaravelNlp\\": "src"
     }
   },
   "extra": {
